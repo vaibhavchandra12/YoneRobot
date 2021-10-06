@@ -215,7 +215,7 @@ def start(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.reply_text(
-            """**Hey**🤞, I am [𝐋𝐢𝐯𝐯𝐲🥀🍃☘️](https://telegra.ph/file/62481e4230d8a5c438840.jpg). How Can I Help You❓\n<b>Uptime:</b> <code>{}</code>""".format(
+            """**Hey**🤞, I am 𝐋𝐢𝐯𝐯𝐲🥀🍃☘️. How Can I Help You❓\n<b>Uptime:</b> <code>{}</code>""".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,

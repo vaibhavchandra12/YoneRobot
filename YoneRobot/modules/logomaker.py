@@ -235,7 +235,7 @@ LOGO_LINKS            = ["https://telegra.ph/file/d1838efdafce9fe611d0c.jpg",
                          "https://telegra.ph/file/9849b3940f063b065f4e3.jpg"
                          ]
 
-@client.on(events.NewMessage(pattern="^/rlogo ?(.*)"))
+@register(pattern="^/rlogo ?(.*)")
 async def lego(event):
  quew = event.pattern_match.group(1)
  if event.sender_id == OWNER_ID:
@@ -267,7 +267,7 @@ async def lego(event):
     draw.text((x, y), text, font=font, fill="white", stroke_width=1, stroke_fill="black")
     fname = "livvy.png"
     img.save(fname, "png")
-    await client.send_file(event.chat_id, file=fname, caption = f"Made By @MissLivvyBot, Join @RhythmOff")         
+    await tbot.send_file(event.chat_id, file=fname, caption = f"Made By @MissLivvyBot, Join @RhythmOff")         
     await pesan.delete()
     if os.path.exists(fname):
             os.remove(fname)

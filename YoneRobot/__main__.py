@@ -74,35 +74,36 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-ʜᴇʟʟᴏ [🤗](https://telegra.ph/file/ebf62ff4c5668adcfa28c.jpg), ɪᴍ ʏᴏɴᴇ ᴀ ʜɪɢʜʏ ᴀᴅᴠᴀɴᴄᴇᴅ ʙᴏᴛ ᴡɪᴛʜ ʟᴏᴛꜱ ᴏꜰ ᴀᴍᴀᴢɪɴɢ ᴛᴏᴏʟꜱ.
-`ɪ'ᴍ ʜᴇʀᴇ ᴛᴏ ʜᴇʟᴘ ʏᴏᴜ ᴍᴀɴᴀɢᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘꜱ! ʜɪᴛ` /help   
+**Hey**🤞, [I am 𝐋𝐢𝐯𝐯𝐲](https://telegra.ph/file/fce0bf475b8f03ab13c2f.jpg)🥀🍃☘️
+**I am an Advanced Group Manager Bot, With Lots of Cool Features❤️.**
+`For More Information Use the Button Below or Send` /help 
 """
 
 buttons = [
     [
         InlineKeyboardButton(
-            text="➕️ ᴀᴅᴅ ʏᴏɴᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕️", url="t.me/Yone_Robot?startgroup=true"),
+            text="Add Me Now➕️", url="t.me/MissLivvyBot?startgroup=true"),
     ],
     [
-        InlineKeyboardButton(text="ᴀʙᴏᴜᴛ", callback_data="yone_"),
+        InlineKeyboardButton(text="About🤞", callback_data="livvy_"),
         InlineKeyboardButton(
-            text="ꜱᴜᴘᴘᴏʀᴛ", url=f"https://t.me/{SUPPORT_CHAT}"
+            text="Support💝", url=f"https://t.me/{SUPPORT_CHAT}"
         ),
     ],
     [
-        InlineKeyboardButton(text="ʜᴇʟᴘ & ᴄᴏᴍᴍᴀɴᴅꜱ❔", callback_data="help_back"),
+        InlineKeyboardButton(text="Help And CMDs❓", callback_data="help_back"),
     ],
 ]
 
 
 HELP_STRINGS = """
-`ʜɪ.. ɪ'ᴍ` [yone🙋‍♀️](https://telegra.ph/file/082096b101615e33eaf19.jpg) 
-`ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴꜱ ʙᴇʟᴏᴡ ᴛᴏ ɢᴇᴛ ᴅᴏᴄᴜᴍᴇɴᴛᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ꜱᴘᴇᴄɪꜰɪᴄ ᴍᴏᴅᴜʟᴇꜱ..`"""
+**Hey**🤞, [I am 𝐋𝐢𝐯𝐯𝐲](https://telegra.ph/file/fce0bf475b8f03ab13c2f.jpg)🥀🍃☘️
+`Click Buttons Below to Know My Features and CMDs...`"""
 
-yone_IMG = "https://telegra.ph/file/7e61fe06a9c02747249c4.jpg"
+yone_IMG = "https://telegra.ph/file/c77328ba4c5c44b8fd413.mp4"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
- You can support the project via [Paypal](#) or by contacting @kittu5588 \
+ You can support the project via [Paypal](#) or by contacting @X_MEN_T \
  Supporting isnt always financial! \
  Those who cannot provide monetary support are welcome to help us develop the bot at ."""
 
@@ -189,7 +190,7 @@ def start(update: Update, context: CallbackContext):
                     update.effective_chat.id,
                     HELPABLE[mod].__help__,
                     InlineKeyboardMarkup(
-                        [[InlineKeyboardButton(text="⬅️ BACK", callback_data="help_back")]]
+                        [[InlineKeyboardButton(text="Back🔙", callback_data="help_back")]]
                     ),
                 )
 
@@ -214,7 +215,7 @@ def start(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.reply_text(
-            "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>".format(
+            "**Hey**🤞, I am 𝐋𝐢𝐯𝐯𝐲🥀🍃☘️. How Can I Help You❓\n<b>Uptime:</b> <code>{}</code>".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
@@ -303,7 +304,7 @@ def help_button(update, context):
                 parse_mode=ParseMode.MARKDOWN,
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(
-                    [[InlineKeyboardButton(text="Back", callback_data="help_back")]]
+                    [[InlineKeyboardButton(text="Back🔙", callback_data="help_back")]]
                 ),
             )
 
@@ -347,24 +348,24 @@ def help_button(update, context):
 @run_async
 def yone_about_callback(update, context):
     query = update.callback_query
-    if query.data == "yone_":
+    if query.data == "livvy_":
         query.message.edit_text(
-            text=""" ℹ️ I'm *yone*, a powerful group management bot built to help you manage your group easily.
-                 \n❍ I can restrict users.
-                 \n❍ I can greet users with customizable welcome messages and even set a group's rules.
-                 \n❍ I have an advanced anti-flood system.
-                 \n❍ I can warn users until they reach max warns, with each predefined actions such as ban, mute, kick, etc.
-                 \n❍ I have a note keeping system, blacklists, and even predetermined replies on certain keywords.
-                 \n❍ I check for admins' permissions before executing any command and more stuffs
-                 \n\n_yone's licensed under the GNU General Public License v3.0_
-                 \nHere is the [💾Repository](https://github.com/noob-kittu/YoneRobot).
-                 \n\nIf you have any question about yone, let us know at .""",
+            text="""ℹ️ ɪ'ᴍ *𝐋ɪᴠᴠʏ*, ᴀ ᴘᴏᴡᴇʀꜰᴜʟ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ʙᴜɪʟᴛ ᴛᴏ ʜᴇʟᴘ ʏᴏᴜ ᴍᴀɴᴀɢᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴇᴀꜱɪʟʏ.
+                 \ɴ❍ ɪ ᴄᴀɴ ʀᴇꜱᴛʀɪᴄᴛ ᴜꜱᴇʀꜱ.
+                 \ɴ❍ ɪ ᴄᴀɴ ɢʀᴇᴇᴛ ᴜꜱᴇʀꜱ ᴡɪᴛʜ ᴄᴜꜱᴛᴏᴍɪᴢᴀʙʟᴇ ᴡᴇʟᴄᴏᴍᴇ ᴍᴇꜱꜱᴀɢᴇꜱ ᴀɴᴅ ᴇᴠᴇɴ ꜱᴇᴛ ᴀ ɢʀᴏᴜᴘ'ꜱ ʀᴜʟᴇꜱ.
+                 \ɴ❍ ɪ ʜᴀᴠᴇ ᴀɴ ᴀᴅᴠᴀɴᴄᴇᴅ ᴀɴᴛɪ-ꜰʟᴏᴏᴅ ꜱʏꜱᴛᴇᴍ.
+                 \ɴ❍ ɪ ᴄᴀɴ ᴡᴀʀɴ ᴜꜱᴇʀꜱ ᴜɴᴛɪʟ ᴛʜᴇʏ ʀᴇᴀᴄʜ ᴍᴀx ᴡᴀʀɴꜱ, ᴡɪᴛʜ ᴇᴀᴄʜ ᴘʀᴇᴅᴇꜰɪɴᴇᴅ ᴀᴄᴛɪᴏɴꜱ ꜱᴜᴄʜ ᴀꜱ ʙᴀɴ, ᴍᴜᴛᴇ, ᴋɪᴄᴋ, ᴇᴛᴄ.
+                 \ɴ❍ ɪ ʜᴀᴠᴇ ᴀ ɴᴏᴛᴇ ᴋᴇᴇᴘɪɴɢ ꜱʏꜱᴛᴇᴍ, ʙʟᴀᴄᴋʟɪꜱᴛꜱ, ᴀɴᴅ ᴇᴠᴇɴ ᴘʀᴇᴅᴇᴛᴇʀᴍɪɴᴇᴅ ʀᴇᴘʟɪᴇꜱ ᴏɴ ᴄᴇʀᴛᴀɪɴ ᴋᴇʏᴡᴏʀᴅꜱ.
+                 \ɴ❍ ɪ ᴄʜᴇᴄᴋ ꜰᴏʀ ᴀᴅᴍɪɴꜱ' ᴘᴇʀᴍɪꜱꜱɪᴏɴꜱ ʙᴇꜰᴏʀᴇ ᴇxᴇᴄᴜᴛɪɴɢ ᴀɴʏ ᴄᴏᴍᴍᴀɴᴅ ᴀɴᴅ ᴍᴏʀᴇ ꜱᴛᴜꜰꜰꜱ
+                 \ɴ\ɴ_𝐋ɪᴠᴠʏ'ꜱ ʟɪᴄᴇɴꜱᴇᴅ ᴜɴᴅᴇʀ ᴛʜᴇ ɢɴᴜ ɢᴇɴᴇʀᴀʟ ᴘᴜʙʟɪᴄ ʟɪᴄᴇɴꜱᴇ ᴠ3.0_
+                 \ɴʜᴇʀᴇ ɪꜱ ᴛʜᴇ [💾ʀᴇᴘᴏꜱɪᴛᴏʀʏ](https://github.com/noob-kittu/yonerobot).
+                 \ɴ\ɴɪꜰ ʏᴏᴜ ʜᴀᴠᴇ ᴀɴʏ Qᴜᴇꜱᴛɪᴏɴ ᴀʙᴏᴜᴛ ʏᴏɴᴇ, ʟᴇᴛ ᴜꜱ ᴋɴᴏᴡ ᴀᴛ @RhythmOff.""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Back", callback_data="yone_back")
+                    InlineKeyboardButton(text="Back🔙", callback_data="yone_back")
                  ]
                 ]
             ),
@@ -384,7 +385,7 @@ def Source_about_callback(update, context):
     query = update.callback_query
     if query.data == "source_":
         query.message.edit_text(
-            text=""" Hi..🤗 I'm *yone*
+            text=""" Hi..🤗 I'm *𝐋ɪᴠᴠʏ*
                  \nHere is the [Source Code](https://github.com/Noob-kittu/YoneRobot) .""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
@@ -457,7 +458,7 @@ def get_help(update: Update, context: CallbackContext):
             chat.id,
             text,
             InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Back", callback_data="help_back")]]
+                [[InlineKeyboardButton(text="Back🔙", callback_data="help_back")]]
             ),
         )
 
@@ -530,7 +531,7 @@ def settings_button(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                text="Back",
+                                text="Back🔙",
                                 callback_data="stngs_back({})".format(chat_id),
                             )
                         ]
@@ -680,7 +681,7 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "Yes I'm alive 😹")
+            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "𝐋𝐢𝐯𝐯𝐲🥀🍃☘️ is Back on Fire🔥")
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!"

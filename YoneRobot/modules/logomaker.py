@@ -2,6 +2,13 @@ from YoneRobot.events import register
 from YoneRobot import OWNER_ID
 from YoneRobot import telethn as tbot
 import os 
+import io
+import requests
+import shutil 
+import random
+import re
+import glob
+import time
 from PIL import Image, ImageDraw, ImageFont
 
 LOGO_LINKS            = ["https://telegra.ph/file/d1838efdafce9fe611d0c.jpg",
@@ -235,7 +242,7 @@ LOGO_LINKS            = ["https://telegra.ph/file/d1838efdafce9fe611d0c.jpg",
                          "https://telegra.ph/file/9849b3940f063b065f4e3.jpg"
                          ]
 
-@register(pattern="^/rlogo ?(.*)")
+@register(pattern="^/logo ?(.*)")
 async def lego(event):
  quew = event.pattern_match.group(1)
  if event.sender_id == OWNER_ID:
@@ -275,7 +282,7 @@ async def lego(event):
     await event.reply(f'Error, Report @RhythmOff, {e}')
 
 
-@register(pattern="^/logo ?(.*)")
+@register(pattern="^/blogo ?(.*)")
 async def lego(event):
  quew = event.pattern_match.group(1)
  if event.sender_id == OWNER_ID:
@@ -358,8 +365,8 @@ file_helpo = file_help.replace("_", " ")
 
 
 __help__ = """
- ❍ /logo text :  Create your logo with your name
+ ❍ /logo text :  Create your logo with your name with random bg
  ❍ /wlogo text :  Create your logo with your name with black bg
- ❍ /rlogo text :  Create your logo with your name with random bg
+ ❍ /blogo text :  Create your logo with your name with random bg
  """
 __mod_name__ = "Logo"

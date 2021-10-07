@@ -97,7 +97,7 @@ buttons = [
 
 
 HELP_STRINGS = """
-**Hey**🤞, [I am 𝐋𝐢𝐯𝐯𝐲](https://telegra.ph/file/5616789462ee57ddb7198.jpg)🥀🍃☘️
+**Hey**🤞, [I am 𝐋𝐢𝐯𝐯𝐲](https://telegra.ph/file/87f5390f2210c2514eaf7.jpg)🥀🍃☘️
 `Click Buttons Below to Know My Features and CMDs...`"""
 
 yone_IMG = "https://telegra.ph/file/c77328ba4c5c44b8fd413.mp4"
